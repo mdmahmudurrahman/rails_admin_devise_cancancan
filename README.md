@@ -30,4 +30,16 @@ Install rails admin:
  ```
  reference: https://github.com/sferik/rails_admin/wiki/Authorization
  
+ ### Include models
  
+ ```
+  config.included_models = ["Project", "Company", "Department"]
+ 
+```
+
+### Set the app name 
+
+```
+  config.main_app_name = ["Experiment With Rails Admin", ""]
+
+```
