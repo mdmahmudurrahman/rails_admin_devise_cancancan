@@ -43,12 +43,18 @@ RailsAdmin.config do |config|
     # collection actions
     index                         # mandatory
     new
-    export
+    export do
+      only ["Company", "Department"]
+    end
     bulk_delete
     # member actions
     show
-    edit
-    delete
+    edit do
+      only ["Company", "Department"]
+    end
+    delete do
+      only ["Company", "Department"]
+    end
     show_in_app
 
     ## With an audit adapter, you can add:

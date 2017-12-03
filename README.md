@@ -35,7 +35,7 @@ Install rails admin:
  ```
   config.included_models = ["Project", "Company", "Department"]
  
-```
+ ```
 
 ### Set the app name 
 
@@ -43,3 +43,18 @@ Install rails admin:
   config.main_app_name = ["Experiment With Rails Admin", ""]
 
 ```
+
+### Decide which action should display on which on which model like as I want to remove edit and delete action for the "Project" model
+#### ref: https://github.com/sferik/rails_admin/wiki/Actions#per-model-basis
+```
+ config.actions do
+   edit do
+     only ["Company", "Department"]
+   end
+   delete do
+     only ["Company", "Department"]
+   end
+ end
+```
+
+### 
