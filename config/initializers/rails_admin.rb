@@ -6,7 +6,13 @@ RailsAdmin.config do |config|
   config.authenticate_with do
     warden.authenticate! scope: :employee
   end
-  # config.current_user_method(&:current_user)
+  config.current_user_method(&:current_employee)
+
+  RailsAdmin.config do |config|
+    config.authorize_with do
+      redirect_to main_app.root_path unless current_employee.role === Employee.roles.keys[1]
+    end
+  end
 
   ## == Cancan ==
   # config.authorize_with :cancan

@@ -7,4 +7,6 @@ class Employee < ApplicationRecord
   belongs_to :project, optional: true, dependent: :destroy
   belongs_to :company, optional: true, dependent: :destroy
   belongs_to :department, optional: true, dependent: :destroy
+
+  enum role: [:employee, :admin]
 end
