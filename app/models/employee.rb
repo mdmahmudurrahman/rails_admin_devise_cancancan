@@ -4,7 +4,7 @@ class Employee < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  belongs_to :project, optional: true
-  belongs_to :company, optional: true
-  belongs_to :department, optional: true
+  belongs_to :project, optional: true, dependent: :destroy
+  belongs_to :company, optional: true, dependent: :destroy
+  belongs_to :department, optional: true, dependent: :destroy
 end

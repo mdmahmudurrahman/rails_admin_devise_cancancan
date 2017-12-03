@@ -1,5 +1,5 @@
 class Department < ApplicationRecord
-  belongs_to :company
+  belongs_to :company, dependent: :destroy
   has_many :employees
   has_many :projects
 end

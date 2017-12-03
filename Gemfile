@@ -33,6 +33,8 @@ gem "bootstrap-sass"
 gem "devise"
 gem "bootstrap"
 gem "jquery-rails"
+gem "rails_admin", "~> 1.2"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
