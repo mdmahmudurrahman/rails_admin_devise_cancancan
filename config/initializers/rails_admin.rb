@@ -29,12 +29,23 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
 
+  # Include the models in the navigation
+  config.included_models = ["Project", "Company", "Department"]
+  # config.excluded_models = ["Employee"]
+  #
+  # config.model "Employee" do
+  #   visible false
+  # end
+
   config.actions do
+    # root actions
     dashboard                     # mandatory
+    # collection actions
     index                         # mandatory
     new
     export
     bulk_delete
+    # member actions
     show
     edit
     delete
@@ -44,4 +55,7 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  # Provide application name
+  config.main_app_name = ["Experiment With Rails Admin", ""]
 end
